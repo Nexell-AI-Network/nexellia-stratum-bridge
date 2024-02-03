@@ -1,0 +1,34 @@
+{
+    "name": "nexe_srb_local_adapter",
+    "isFavorite": false,
+    "items": [
+        {
+            "coin": "NEXE",
+            "pool_ssl": false,
+            "dpool_ssl": false,
+            "miner": "srbminer",
+            "miner_config": {
+                "url": "127.0.0.1:5555",
+                "algo": "nexelliahash",
+                "worker": "%WORKER_NAME%",
+                "template": "%WAL%",
+                "user_config": "--disable-cpu"
+            },
+            "pool_geo": []
+        },
+        {
+            "coin": "NEXE",
+            "pool_ssl": false,
+            "dpool_ssl": false,
+            "miner": "custom",
+            "miner_alt": "nexe_bridge",
+            "miner_config": {
+                "url": "YOUR_NEXELLIAD_NODE_IP_HERE:33455",
+                "miner": "nexe_bridge",
+                "template": "doesnt.matter",
+                "install_url": "https://github.com/nexellia/nexellia-stratum-bridge/releases/download/v1.1.0/nexe_bridge-1.1.0_hive.tar.gz"
+            },
+            "pool_geo": []
+        }
+    ]
+}
