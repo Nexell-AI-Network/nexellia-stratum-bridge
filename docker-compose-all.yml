@@ -1,9 +1,9 @@
 volumes:
   prometheus_data: {}
 services:
-  nexe_bridge:
+  nxl_bridge:
     image: nexellianetwork/nexellia_bridge:latest
-    container_name: nexe_bridge
+    container_name: nxl_bridge
     restart: unless-stopped
     user: "0"
     command:
@@ -12,8 +12,6 @@ services:
       - '-stratum=:5555'
       - '-prom=:2114'
       - '-nexellia=host.docker.internal:33455'
-      - '-mindiff=64'
-      - '-vardiff=true'
     ports:
       - 5555:5555
       - 2114:2114
@@ -21,7 +19,7 @@ services:
       - host.docker.internal:host-gateway
   grafana:
     image: grafana/grafana-oss:latest
-    container_name: nexe_grafana
+    container_name: nxl_grafana
     restart: unless-stopped
     user: "0"
     volumes:
@@ -34,7 +32,7 @@ services:
       - host.docker.internal:host-gateway
   prometheus:
     image: prom/prometheus:latest
-    container_name: nexe_prom
+    container_name: nxl_prom
     restart: unless-stopped
     volumes:
       - prometheus_data:/prometheus

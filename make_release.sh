@@ -3,9 +3,9 @@ rm -rf release
 mkdir -p release
 cd release
 VERSION=1.1.0
-ARCHIVE="nexe_bridge-${VERSION}"
-OUTFILE="nexe_bridge"
-OUTDIR="nexe_bridge"
+ARCHIVE="nxl_bridge-${VERSION}"
+OUTFILE="nxl_bridge"
+OUTDIR="nxl_bridge"
 
 # windows
 mkdir -p ${OUTDIR};env GOOS=windows GOARCH=amd64 go build -o ${OUTDIR}/${OUTFILE}.exe ${CMD_PATH};cp ${CMD_PATH}/config.yaml ${OUTDIR}/

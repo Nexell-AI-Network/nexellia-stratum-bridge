@@ -1,65 +1,55 @@
-# Configuring monitoring (Grafana + Prometheus)
+# Configuring monitoring (Grafana + Prom)
+
+Easiest setup, [join my 0-fee solo pool](http://grafana.ghost-pool.io/d/x7cE7G74k/pool-monitoring?orgId=1&refresh=5s)
 
 ## Reqirements
 
-[Install Docker](https://docs.docker.com/engine/install/) using the
-appropriate method for your OS.
+Docker must be installed! Visit https://www.docker.com/ and follow the setup instructions on the docker website
 
 ## Configuration
 
-To begin you need to pull down the repo (or use the zipped source from
-the release). I'll use the [release](releases) code for this example.
-The `zip` archive is for Windows, the `tar.gz` for everything else.
-Unzip the source in a directory of your choice and open a shell/cmd
-prompt. At this point if you can not progress without [Docker](https://docs.docker.com/engine/install/)
-installed. Go install it if you haven't already. For this example I'll
-be running everything in docker -- including the bridge. So type the
-following from the root folder to stand up everything:
+To begin you need to pull down the repo (or use the zipped source from the release). I'll use the release code for this example.
 
-`docker compose -f docker-compose-all-src.yml up -d --build`
+Go to the latest release ([v1.0.0](https://github.com/GRinvestPOOL/nexellia-stratum-bridge/releases/tag/v1.0.0) at the time of writing) and download the source code. Download the zip archive for windows, tar.gz for everything else.
 
-Youll see output about downloading images. After completion, everything
-is running successfully in the background.
+![image](https://user-images.githubusercontent.com/59971111/192021218-01d83e83-3ad4-4ce2-87b4-080ff30b6693.png)
 
-* nexe_bridge is running on port `:5555`
-* prometheus is running on port `:9090`
-* grafana is running on port `:3000`
+Unzip the source in a directory of your choice and open a shell/cmd prompt.
 
-You may point your miners the IP address of the computer you installed
-on at port `5555`. If you're unsure about your current IP then run
-`ipconfig` on Windows and `ip a ls` in Linux. You'll put this IP and
-the port into your miner config.
+![image](https://user-images.githubusercontent.com/59971111/192022638-0c772814-c47e-4f41-b579-4fcf5b387394.png)
 
-## Accessing Grafana
+At this point if you can not progress without docker installed. Go install it if you haven't already.
 
-Assuming the setup went correctly you'll be able to access grafana by
-visiting `http://127.0.0.1:3000/d/x7cE7G74k1/nexeb-monitoring`. Grafana
-will asl for login. The default username and password is `admin`.
-Grafana will prompt you to change the password but you can just ignore
-it (hit skip). You will then be redirected to the mining dashboard.
-It'll look empty on fresh installation until you start getting info
-from your miners.
+For this example I'll be running everything in docker -- including the bridge. So type the following from the root folder to stand up everything:
 
-At this point you're configured and good to go. Many of the stats on the
-graph are averaged over a configurable time period (24hr default - use
-the 'resolution' dropdown on the top left of the page to change this),
-so keep in mind that the metrics might be incomplete during this initial
-period.
+`docker compose -f docker-compose-all.yml up -d`
 
-Also note that there are 'wallet_filter' and 'show_balances' dropdowns
-as well. These filter the database and hide your balance if you don't
-want that exposed. The monitoring UI is also accessable on any device on
-your local network (including your phone!) if you use the host computers
-ip address -- just type in the ip and port such as
-`http://192.168.0.25:3000` (this is an example, this exact link
-probablly wont work for you).
+Youll see output about downloading images and such and eventually see output like below:
 
-## Screenshots
+![image](https://user-images.githubusercontent.com/59971111/192023410-4d5d09c4-2b52-4405-ae5c-3c113e33c4c8.png)
 
-![Grafana Monitoring 1](images/grafana-1.png)
+At this point everything is running successfully in the background.
 
-![Grafana Monitoring 2](images/grafana-2.png)
+- nxl_bridge is running on port :5555
+- prometheus is running on port :9090
+- grafana is running on port :3000
 
-![Grafana NEXEB Monitoring 1](images/grafana-3.png)
+You may point your miners the IP address of the computer you installed on at port 5555. I you're unsure your current IP then run `ipconfig` on windows and `ifconfig` in linux. You'll put this IP and the port into your miner config.
 
-![Grafana NEXEB Monitoring 2](images/grafana-4.png)
+## Accessing grafana
+
+Assuming the setup went correctly you'll be able to access grafana by visiting http://127.0.0.1:3000
+
+![image](https://user-images.githubusercontent.com/59971111/192024515-dd487a3a-3d15-4d21-bfbf-189b2db69782.png)
+
+The default user/password is admin/admin. Grafana will prompt you to change the password but you can just ignore it (hit skip).
+
+You'll land on the main grafana page. There's a lot you can do here but for now just click the pre-made dashboard:
+
+![image](https://user-images.githubusercontent.com/59971111/192024840-f8ebd4b0-dda0-4249-b4da-3a971baf9836.png)
+
+This will drop you to the mining dashboard. It'll look like below until you start getting info from your miners.
+
+![image](https://user-images.githubusercontent.com/59971111/192024903-ed629405-ac6f-4263-8005-8863399d227a.png)
+
+At this point you're configured and good to go. Things to note here are that the stats will be inaccurate for the first hour or so that the bridge is running as most of the stats are based on 10-30m averages. Also note that there is a 'wallet_filter' and 'show_balances' toggle near the top of the screen. These filter the database and hide your balance if you don't want that exposed. The monitoring UI is also accessable on any device on your local network (including your phone!) if you use the host computers ip address -- just type in the ip and port such as `http://192.168.0.25/3000` (this is an example, this exact link probablly wont work for you)

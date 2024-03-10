@@ -5,8 +5,8 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/Nexellia-Network/nexelliad/util"
 	"github.com/mattn/go-colorable"
-	"github.com/nexellia/nexelliad/util"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

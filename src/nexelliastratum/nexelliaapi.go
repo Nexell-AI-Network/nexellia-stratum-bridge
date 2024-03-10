@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/nexellia/nexellia-stratum-bridge/src/gostratum"
-	"github.com/nexellia/nexelliad/app/appmessage"
-	"github.com/nexellia/nexelliad/infrastructure/network/rpcclient"
+	"github.com/GRinvestPOOL/nexellia-stratum-bridge/src/gostratum"
+	"github.com/Nexellia-Network/nexelliad/app/appmessage"
+	"github.com/Nexellia-Network/nexelliad/infrastructure/network/rpcclient"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )
@@ -16,11 +16,11 @@ type NexelliaApi struct {
 	address       string
 	blockWaitTime time.Duration
 	logger        *zap.SugaredLogger
-	nexelliad     *rpcclient.RPCClient
+	nexelliad      *rpcclient.RPCClient
 	connected     bool
 }
 
-func NewNexelliaAPI(address string, blockWaitTime time.Duration, logger *zap.SugaredLogger) (*NexelliaApi, error) {
+func NewNexelliaApi(address string, blockWaitTime time.Duration, logger *zap.SugaredLogger) (*NexelliaApi, error) {
 	client, err := rpcclient.NewRPCClient(address)
 	if err != nil {
 		return nil, err
@@ -30,7 +30,7 @@ func NewNexelliaAPI(address string, blockWaitTime time.Duration, logger *zap.Sug
 		address:       address,
 		blockWaitTime: blockWaitTime,
 		logger:        logger.With(zap.String("component", "nexelliaapi:"+address)),
-		nexelliad:     client,
+		nexelliad:      client,
 		connected:     true,
 	}, nil
 }
@@ -89,7 +89,7 @@ func (s *NexelliaApi) waitForSync(verbose bool) error {
 		if clientInfo.IsSynced {
 			break
 		}
-		s.logger.Warn("Nexellia is not synced, waiting for sync before starting bridge")
+		s.logger.Warn("Karlsen is not synced, waiting for sync before starting bridge")
 		time.Sleep(5 * time.Second)
 	}
 	if verbose {
@@ -132,7 +132,7 @@ func (s *NexelliaApi) startBlockTemplateListener(ctx context.Context, blockReady
 func (ks *NexelliaApi) GetBlockTemplate(
 	client *gostratum.StratumContext) (*appmessage.GetBlockTemplateResponseMessage, error) {
 	template, err := ks.nexelliad.GetBlockTemplate(client.WalletAddr,
-		fmt.Sprintf(`'%s' via nexellia/nexellia-stratum-bridge_%s`, client.RemoteApp, version))
+		fmt.Sprintf(`'%s' via nexellia-network/nexellia-stratum-bridge_%s`, client.RemoteApp, version))
 	if err != nil {
 		return nil, errors.Wrap(err, "failed fetching new block template from nexellia")
 	}

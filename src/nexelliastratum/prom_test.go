@@ -3,8 +3,8 @@ package nexelliastratum
 import (
 	"testing"
 
-	"github.com/nexellia/nexellia-stratum-bridge/src/gostratum"
-	"github.com/nexellia/nexelliad/app/appmessage"
+	"github.com/GRinvestPOOL/nexellia-stratum-bridge/src/gostratum"
+	"github.com/Nexellia-Network/nexelliad/app/appmessage"
 )
 
 func TestPromValid(t *testing.T) {

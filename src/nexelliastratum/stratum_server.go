@@ -7,14 +7,14 @@ import (
 	"os"
 	"time"
 
+	"github.com/GRinvestPOOL/nexellia-stratum-bridge/src/gostratum"
 	"github.com/mattn/go-colorable"
-	"github.com/nexellia/nexellia-stratum-bridge/src/gostratum"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
 
 const version = "v1.1.0"
-const minBlockWaitTime = 3 * time.Second
+const minBlockWaitTime = 500 * time.Millisecond
 
 type BridgeConfig struct {
 	StratumPort     string        `yaml:"stratum_port"`
@@ -25,9 +25,6 @@ type BridgeConfig struct {
 	HealthCheckPort string        `yaml:"health_check_port"`
 	BlockWaitTime   time.Duration `yaml:"block_wait_time"`
 	MinShareDiff    uint          `yaml:"min_share_diff"`
-	VarDiff         bool          `yaml:"var_diff"`
-	SharesPerMin    uint          `yaml:"shares_per_min"`
-	VarDiffStats    bool          `yaml:"var_diff_stats"`
 	ExtranonceSize  uint          `yaml:"extranonce_size"`
 }
 
@@ -63,10 +60,10 @@ func ListenAndServe(cfg BridgeConfig) error {
 	}
 
 	blockWaitTime := cfg.BlockWaitTime
-	if blockWaitTime == 0 {
+	if blockWaitTime < minBlockWaitTime {
 		blockWaitTime = minBlockWaitTime
 	}
-	ksApi, err := NewNexelliaAPI(cfg.RPCServer, blockWaitTime, logger)
+	ksApi, err := NewNexelliaApi(cfg.RPCServer, blockWaitTime, logger)
 	if err != nil {
 		return err
 	}
@@ -81,8 +78,8 @@ func ListenAndServe(cfg BridgeConfig) error {
 
 	shareHandler := newShareHandler(ksApi.nexelliad)
 	minDiff := cfg.MinShareDiff
-	if minDiff == 0 {
-		minDiff = 4
+	if minDiff < 1 {
+		minDiff = 1
 	}
 	extranonceSize := cfg.ExtranonceSize
 	if extranonceSize > 3 {
@@ -112,10 +109,6 @@ func ListenAndServe(cfg BridgeConfig) error {
 	ksApi.Start(ctx, func() {
 		clientHandler.NewBlockAvailable(ksApi)
 	})
-
-	if cfg.VarDiff {
-		go shareHandler.startVardiffThread(cfg.SharesPerMin, cfg.VarDiffStats)
-	}
 
 	if cfg.PrintStats {
 		go shareHandler.startStatsThread()

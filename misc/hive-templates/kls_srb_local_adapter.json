@@ -1,32 +1,30 @@
 {
-    "name": "nexe_srb_local_adapter",
     "isFavorite": false,
     "items": [
         {
-            "coin": "NEXE",
+            "coin": "NXL",
             "pool_ssl": false,
             "dpool_ssl": false,
             "miner": "srbminer",
             "miner_config": {
                 "url": "127.0.0.1:5555",
-                "algo": "nexelliahash",
+                "algo": "karlsen",
                 "worker": "%WORKER_NAME%",
-                "template": "%WAL%",
                 "user_config": "--disable-cpu"
             },
             "pool_geo": []
         },
         {
-            "coin": "NEXE",
+            "coin": "NXL",
             "pool_ssl": false,
             "dpool_ssl": false,
             "miner": "custom",
-            "miner_alt": "nexe_bridge",
+            "miner_alt": "nxl_bridge",
             "miner_config": {
                 "url": "YOUR_NEXELLIAD_NODE_IP_HERE:33455",
-                "miner": "nexe_bridge",
+                "miner": "nxl_bridge",
                 "template": "doesnt.matter",
-                "install_url": "https://github.com/nexellia/nexellia-stratum-bridge/releases/download/v1.1.0/nexe_bridge-1.1.0_hive.tar.gz"
+                "install_url": "https://github.com/GRinvestPOOL/nexellia-stratum-bridge/releases/download/v1.0.0/nxl_bridge-1.0.0_hive.tar.gz"
             },
             "pool_geo": []
         }

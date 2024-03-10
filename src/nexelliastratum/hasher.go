@@ -9,7 +9,7 @@ import (
 	"log"
 	"math/big"
 
-	"github.com/nexellia/nexelliad/app/appmessage"
+	"github.com/Nexellia-Network/nexelliad/app/appmessage"
 	"golang.org/x/crypto/blake2b"
 )
 
@@ -29,7 +29,7 @@ type nexelliaDiff struct {
 	targetValue *big.Int // previously know as fixedDifficultyBI
 }
 
-func newNexelliaDiff() *nexelliaDiff {
+func newKarlsenDiff() *nexelliaDiff {
 	return &nexelliaDiff{}
 }
 
