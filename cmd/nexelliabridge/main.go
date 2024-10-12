@@ -8,7 +8,7 @@ import (
 	"path"
 	"time"
 
-	"github.com/GRinvestPOOL/nexellia-stratum-bridge/src/nexelliastratum"
+	"github.com/Nexell-AI-Network/nexellia-stratum-bridge/src/nexelliastratum"
 	"gopkg.in/yaml.v2"
 )
 
@@ -29,7 +29,7 @@ func main() {
 
 	flag.StringVar(&cfg.StratumPort, "stratum", cfg.StratumPort, "stratum port to listen on, default `:5555`")
 	flag.BoolVar(&cfg.PrintStats, "stats", cfg.PrintStats, "true to show periodic stats to console, default `true`")
-	flag.StringVar(&cfg.RPCServer, "nexellia", cfg.RPCServer, "address of the nexelliad node, default `localhost:42110`")
+	flag.StringVar(&cfg.RPCServer, "nexellia", cfg.RPCServer, "address of the nexelliad node, default `localhost:33455`")
 	flag.DurationVar(&cfg.BlockWaitTime, "blockwait", cfg.BlockWaitTime, "time in ms to wait before manually requesting new block, default `500`")
 	flag.UintVar(&cfg.MinShareDiff, "mindiff", cfg.MinShareDiff, "minimum share difficulty to accept from miner(s), default `4`")
 	flag.UintVar(&cfg.ExtranonceSize, "extranonce", cfg.ExtranonceSize, "size in bytes of extranonce, default `0`")

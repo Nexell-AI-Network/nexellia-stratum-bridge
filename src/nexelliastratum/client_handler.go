@@ -9,7 +9,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/GRinvestPOOL/nexellia-stratum-bridge/src/gostratum"
+	"github.com/Nexell-AI-Network/nexellia-stratum-bridge/src/gostratum"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )
@@ -109,7 +109,7 @@ func (c *clientListener) NewBlockAvailable(kapi *NexelliaApi) {
 					client.Disconnect() // unrecoverable
 				} else {
 					RecordWorkerError(client.WalletAddr, ErrFailedBlockFetch)
-					client.Logger.Error(fmt.Sprintf("failed fetching new block template from nexellia: %s", err))
+					client.Logger.Error(fmt.Sprintf("failed fetching new block template from nexelliatest: %s", err))
 				}
 				return
 			}
@@ -126,7 +126,7 @@ func (c *clientListener) NewBlockAvailable(kapi *NexelliaApi) {
 				state.initialized = true
 				state.useBigJob = bigJobRegex.MatchString(client.RemoteApp)
 				// first pass through send the difficulty since it's fixed
-				state.stratumDiff = newKarlsenDiff()
+				state.stratumDiff = newNexelliaDiff()
 				state.stratumDiff.setDiffValue(c.minShareDiff)
 				if err := client.Send(gostratum.JsonRpcEvent{
 					Version: "2.0",

@@ -395,12 +395,12 @@
           },
           "editorMode": "code",
           "expr": "coin_price{currency=\"nxl\"}",
-          "legendFormat": "USD/KLS",
+          "legendFormat": "USD/NXL",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "KLS Price",
+      "title": "NXL Price",
       "type": "stat"
     },
     {
@@ -2145,7 +2145,7 @@
       {
         "current": {
           "selected": true,
-          "text": "KLS",
+          "text": "NXL",
           "value": "1"
         },
         "hide": 0,
@@ -2160,7 +2160,7 @@
           },
           {
             "selected": true,
-            "text": "KLS",
+            "text": "NXL",
             "value": "1"
           },
           {
@@ -2169,7 +2169,7 @@
             "value": "0"
           }
         ],
-        "query": "USD : 2, KLS : 1, Hide : 0",
+        "query": "USD : 2, NXL : 1, Hide : 0",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -2234,7 +2234,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "KLSB Monitoring",
+  "title": "NXLB Monitoring",
   "uid": "x7cE7G74k",
   "version": 62,
   "weekStart": ""

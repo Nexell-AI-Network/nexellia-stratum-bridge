@@ -3,7 +3,7 @@ FROM golang:1.19.1 as builder
 
 LABEL org.opencontainers.image.description="Dockerized Nexellia Stratum Bridge"
 LABEL org.opencontainers.image.authors="Nexellia Community"
-LABEL org.opencontainers.image.source="https://github.com/GRinvestPOOL/nexellia-stratum-bridge"
+LABEL org.opencontainers.image.source="https://github.com/Nexell-AI-Network/nexellia-stratum-bridge"
 
 WORKDIR /go/src/app
 ADD go.mod .

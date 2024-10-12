@@ -2,10 +2,10 @@
 # Note `:PORT` format is needed if not specifiying a specific ip range
 stratum_port: :5555
 
-# nexelliad_address: address/port of the rpc server for nexelliad, typically 42110
+# nexelliad_address: address/port of the rpc server for nexelliad, typically 33455
 # For a list of public nodes, run `nslookup mainnet-dnsseed.daglabs-dev.com`
 # uncomment for to use a public node
-# nexelliad_address: 46.17.104.200:42110
+# nexelliad_address: 46.17.104.200:33455
 nexelliad_address: localhost:33455
 
 # min_share_diff: only accept shares of the specified difficulty (or higher) from
@@ -13,11 +13,11 @@ nexelliad_address: localhost:33455
 # reducing network traffic and server load, while lower values will increase the
 # number of shares submitted, thereby reducing the amount of time needed for
 # accurate hashrate measurements
-min_share_diff: 64
+min_share_diff: 2
 
 # block_wait_time: time to wait since last new block message from nexelliad before
 # manually requesting a new block
-# block_wait_time: 500ms
+# block_wait_time: 50ms
 
 # extranonce_size: size in bytes of extranonce, from 0 (no extranonce) to 3.
 # With no extranonce (0), all clients will search through the same nonce-space,

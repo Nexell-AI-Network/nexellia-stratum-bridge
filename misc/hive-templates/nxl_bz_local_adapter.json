@@ -1,0 +1,34 @@
+{
+    "name": "nxl_bz_local_adapter",
+    "isFavorite": false,
+    "items": [
+        {
+            "coin": "NXL",
+            "pool_ssl": false,
+            "dpool_ssl": false,
+            "miner": "bzminer",
+            "miner_config": {
+                "url": "127.0.0.1:5555",
+                "algo": "nexellia",
+                "worker": "%WORKER_NAME%",
+                "template": "%WAL%",
+                "user_config": "\"oc_lock_memory_clock\": 810"
+            },
+            "pool_geo": []
+        },
+        {
+            "coin": "NXL",
+            "pool_ssl": false,
+            "dpool_ssl": false,
+            "miner": "custom",
+            "miner_alt": "nxl_bridge",
+            "miner_config": {
+                "url": "YOUR_NEXELLIAD_NODE_IP_HERE:33455",
+                "miner": "nxl_bridge",
+                "template": "doesnt.matter",
+                "install_url": "https://github.com/Nexell-AI-Network/nexellia-stratum-bridge/releases/download/v1.0.0/nxl_bridge-1.0.0_hive.tar.gz"
+            },
+            "pool_geo": []
+        }
+    ]
+}

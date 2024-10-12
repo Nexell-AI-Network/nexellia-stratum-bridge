@@ -7,13 +7,13 @@ import (
 	"os"
 	"time"
 
-	"github.com/GRinvestPOOL/nexellia-stratum-bridge/src/gostratum"
+	"github.com/Nexell-AI-Network/nexellia-stratum-bridge/src/gostratum"
 	"github.com/mattn/go-colorable"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
 
-const version = "v1.1.0"
+const version = "v1.1.1"
 const minBlockWaitTime = 500 * time.Millisecond
 
 type BridgeConfig struct {

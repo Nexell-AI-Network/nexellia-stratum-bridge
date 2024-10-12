@@ -1,9 +1,9 @@
-module github.com/GRinvestPOOL/nexellia-stratum-bridge
+module github.com/Nexell-AI-Network/nexellia-stratum-bridge
 
 go 1.18
 
 require (
-	github.com/Nexellia-Network/nexelliad v1.0.3
+	github.com/Nexellia-Network/nexelliad v1.0.5
 	github.com/google/go-cmp v0.5.8
 	github.com/mattn/go-colorable v0.1.13
 	github.com/pkg/errors v0.9.1
@@ -14,6 +14,7 @@ require (
 )
 
 require (
+	github.com/aead/skein v0.0.0-20160722084837-9365ae6e95d2 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
 	golang.org/x/net v0.7.0 // indirect
 	golang.org/x/sys v0.5.0 // indirect

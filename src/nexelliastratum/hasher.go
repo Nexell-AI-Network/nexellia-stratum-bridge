@@ -29,7 +29,7 @@ type nexelliaDiff struct {
 	targetValue *big.Int // previously know as fixedDifficultyBI
 }
 
-func newKarlsenDiff() *nexelliaDiff {
+func newNexelliaDiff() *nexelliaDiff {
 	return &nexelliaDiff{}
 }
 

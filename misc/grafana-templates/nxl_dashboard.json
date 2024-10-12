@@ -258,7 +258,7 @@
           "exemplar": false,
           "expr": "increase(nxl_balance_by_wallet_gauge{wallet=~\"${wallet_filter}\"}[${resolution}]) *  ${show_balances}",
           "instant": false,
-          "legendFormat": "KLS",
+          "legendFormat": "NXL",
           "range": true,
           "refId": "A"
         }
@@ -325,7 +325,7 @@
           },
           "editorMode": "code",
           "expr": "SUM (nxl_balance_by_wallet_gauge{wallet=~\"${wallet_filter}\"}) * ${show_balances}",
-          "legendFormat": "KLS",
+          "legendFormat": "NXL",
           "range": true,
           "refId": "A"
         }
@@ -2094,8 +2094,8 @@
       {
         "current": {
           "selected": false,
-          "text": "nexellia:qzccsk5fwrh3c88460a0a99srnmhwf5gy49dk2e96935px29u5uks92guhf98",
-          "value": "nexellia:qzccsk5fwrh3c88460a0a99srnmhwf5gy49dk2e96935px29u5uks92guhf98"
+          "text": "nexelliatest:qzccsk5fwrh3c88460a0a99srnmhwf5gy49dk2e96935px29u5uks92guhf98",
+          "value": "nexelliatest:qzccsk5fwrh3c88460a0a99srnmhwf5gy49dk2e96935px29u5uks92guhf98"
         },
         "datasource": {
           "type": "prometheus",
@@ -2151,7 +2151,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "KLSB Monitoring",
+  "title": "NXLB Monitoring",
   "uid": "x7cE7G74k",
   "version": 44,
   "weekStart": ""

@@ -12,10 +12,10 @@ macOS and HiveOS.
 Discord discussions/issues: [here](https://discord.gg/pPNESjGfb5)
 
 Huge shoutout to https://github.com/KaffinPX/KStratum and
-https://github.com/GRinvestPOOL/nexellia-stratum-bridge and
+https://github.com/Nexell-AI-Network/nexellia-stratum-bridge and
 https://github.com/rdugan/kaspa-stratum-bridge for the inspiration.
 
-Tips appreciated: `nexellia:qqe3p64wpjf5y27kxppxrgks298ge6lhu6ws7ndx4tswzj7c84qkjlrspcuxw`
+Tips appreciated: `nexelliatest:qqe3p64wpjf5y27kxppxrgks298ge6lhu6ws7ndx4tswzj7c84qkjlrspcuxw`
 
 ## Hive Setup
 
@@ -46,9 +46,9 @@ convenience. It will help to visualize collected statistics.
 
 ![Grafana Monitoring 2](docs/images/grafana-2.png)
 
-![Grafana KLSB Monitoring 1](docs/images/grafana-3.png)
+![Grafana NXLB Monitoring 1](docs/images/grafana-3.png)
 
-![Grafana KLSB Monitoring 2](docs/images/grafana-4.png)
+![Grafana NXLB Monitoring 2](docs/images/grafana-4.png)
 
 Many of the stats on the graph are averaged over a configurable time
 period (24hr default - use the 'resolution' dropdown to change this), so
@@ -78,14 +78,14 @@ nxl_network_block_count 271966
 nxl_network_difficulty_gauge 1.2526479386202519e+14
 # HELP nxl_valid_share_counter Number of shares found by worker over time
 # TYPE nxl_valid_share_counter counter
-nxl_valid_share_counter{ip="192.168.0.17",miner="SRBMiner-MULTI/2.4.1",wallet="nexellia:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="002"} 276
-nxl_valid_share_counter{ip="192.168.0.24",miner="SRBMiner-MULTI/2.4.1",wallet="nexellia:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="003"} 43
-nxl_valid_share_counter{ip="192.168.0.65",miner="SRBMiner-MULTI/2.4.1",wallet="nexellia:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="001"} 307
+nxl_valid_share_counter{ip="192.168.0.17",miner="SRBMiner-MULTI/2.4.1",wallet="nexelliatest:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="002"} 276
+nxl_valid_share_counter{ip="192.168.0.24",miner="SRBMiner-MULTI/2.4.1",wallet="nexelliatest:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="003"} 43
+nxl_valid_share_counter{ip="192.168.0.65",miner="SRBMiner-MULTI/2.4.1",wallet="nexelliatest:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="001"} 307
 # HELP nxl_worker_job_counter Number of jobs sent to the miner by worker over time
 # TYPE nxl_worker_job_counter counter
-nxl_worker_job_counter{ip="192.168.0.17",miner="SRBMiner-MULTI/2.4.1",wallet="nexellia:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="002"} 3471
-nxl_worker_job_counter{ip="192.168.0.24",miner="SRBMiner-MULTI/2.4.1",wallet="nexellia:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="003"} 3399
-nxl_worker_job_counter{ip="192.168.0.65",miner="SRBMiner-MULTI/2.4.1",wallet="nexellia:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="001"} 3425
+nxl_worker_job_counter{ip="192.168.0.17",miner="SRBMiner-MULTI/2.4.1",wallet="nexelliatest:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="002"} 3471
+nxl_worker_job_counter{ip="192.168.0.24",miner="SRBMiner-MULTI/2.4.1",wallet="nexelliatest:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="003"} 3399
+nxl_worker_job_counter{ip="192.168.0.65",miner="SRBMiner-MULTI/2.4.1",wallet="nexelliatest:qzk3uh2twkhu0fmuq50mdy3r2yzuwqvstq745hxs7tet25hfd4egcafcdmpdl",worker="001"} 3425
 ```
 
 # Install

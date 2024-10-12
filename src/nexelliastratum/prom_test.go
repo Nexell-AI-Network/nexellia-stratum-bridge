@@ -3,7 +3,7 @@ package nexelliastratum
 import (
 	"testing"
 
-	"github.com/GRinvestPOOL/nexellia-stratum-bridge/src/gostratum"
+	"github.com/Nexell-AI-Network/nexellia-stratum-bridge/src/gostratum"
 	"github.com/Nexellia-Network/nexelliad/app/appmessage"
 )
 

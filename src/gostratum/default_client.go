@@ -111,20 +111,21 @@ func SendExtranonce(ctx *StratumContext) {
 	}
 }
 
-var walletRegex = regexp.MustCompile("nexellia:[a-z0-9]+")
+var walletRegex = regexp.MustCompile("^(nexellia|nexelliatest):[a-z0-9]{61,63}$")
+
 
 func CleanWallet(in string) (string, error) {
 	_, err := util.DecodeAddress(in, util.Bech32PrefixKaspa)
 	if err == nil {
 		return in, nil // good to go
 	}
-	if !strings.HasPrefix(in, "nexellia:") {
-		return CleanWallet("nexellia:" + in)
+	if !strings.HasPrefix(in, "nexelliatest:") {
+		return CleanWallet("nexelliatest:" + in)
 	}
 
-	// has nexellia: prefix but other weirdness somewhere
+	// has nexelliatest: prefix but other weirdness somewhere
 	if walletRegex.MatchString(in) {
 		return in[0:67], nil
 	}
-	return "", errors.New("unable to coerce wallet to valid nexellia address")
+	return "", errors.New("unable to coerce wallet to valid nexelliatest address")
 }

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/GRinvestPOOL/nexellia-stratum-bridge/src/gostratum"
+	"github.com/Nexell-AI-Network/nexellia-stratum-bridge/src/gostratum"
 	"github.com/Nexellia-Network/nexelliad/app/appmessage"
 	"github.com/Nexellia-Network/nexelliad/infrastructure/network/rpcclient"
 	"github.com/pkg/errors"
@@ -89,7 +89,7 @@ func (s *NexelliaApi) waitForSync(verbose bool) error {
 		if clientInfo.IsSynced {
 			break
 		}
-		s.logger.Warn("Karlsen is not synced, waiting for sync before starting bridge")
+		s.logger.Warn("Nexellia is not synced, waiting for sync before starting bridge")
 		time.Sleep(5 * time.Second)
 	}
 	if verbose {
