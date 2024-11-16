@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/Nexell-AI-Network/nexellia-stratum-bridge/src/gostratum"
-	"github.com/Nexellia-Network/nexelliad/app/appmessage"
+	"github.com/Nexell-AI-Network/nexelliad/app/appmessage"
 )
 
 const maxjobs = 32

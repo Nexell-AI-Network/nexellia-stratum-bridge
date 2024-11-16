@@ -3,7 +3,7 @@ module github.com/Nexell-AI-Network/nexellia-stratum-bridge
 go 1.18
 
 require (
-	github.com/Nexellia-Network/nexelliad v1.0.5
+	github.com/Nexell-AI-Network/nexelliad v1.1.2
 	github.com/google/go-cmp v0.5.8
 	github.com/mattn/go-colorable v0.1.13
 	github.com/pkg/errors v0.9.1

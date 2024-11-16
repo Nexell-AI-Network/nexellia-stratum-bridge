@@ -9,7 +9,7 @@ import (
 	"log"
 	"math/big"
 
-	"github.com/Nexellia-Network/nexelliad/app/appmessage"
+	"github.com/Nexell-AI-Network/nexelliad/app/appmessage"
 	"golang.org/x/crypto/blake2b"
 )
 

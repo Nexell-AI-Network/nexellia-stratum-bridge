@@ -132,7 +132,7 @@ default port settings, and listen on port 5555 for incoming stratum
 connections.
 
 ```
-git clone https://github.com/Nexellia_Network/nexellia-stratum-bridge.git
+git clone https://github.com/Nexell-AI_Network/nexellia-stratum-bridge.git
 cd nexellia-stratum-bridge
 docker compose -f docker-compose-all-src.yml up -d --build
 ```
@@ -168,7 +168,7 @@ default port settings, and listen on port 5555 for incoming stratum
 connections.
 
 ```
-git clone https://github.com/Nexellia_Network/nexellia-stratum-bridge.git
+git clone https://github.com/Nexell-AI_Network/nexellia-stratum-bridge.git
 cd nexellia-stratum-bridge
 docker compose -f docker-compose-bridge-src.yml up -d --build
 ```

@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/Nexell-AI-Network/nexellia-stratum-bridge/src/gostratum"
-	"github.com/Nexellia-Network/nexelliad/app/appmessage"
+	"github.com/Nexell-AI-Network/nexelliad/app/appmessage"
 )
 
 func TestPromValid(t *testing.T) {
