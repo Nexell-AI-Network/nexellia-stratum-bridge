@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/Nexell-AI-Network/nexellia-stratum-bridge/src/gostratum"
-	"github.com/Nexell-AI-Network/nexelliad/app/appmessage"
-	"github.com/Nexell-AI-Network/nexelliad/infrastructure/network/rpcclient"
+	"github.com/Nexell-AI-Network/nexelliad/v2/app/appmessage"
+	"github.com/Nexell-AI-Network/nexelliad/v2/infrastructure/network/rpcclient"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )

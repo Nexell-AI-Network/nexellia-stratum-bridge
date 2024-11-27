@@ -6,7 +6,7 @@ import (
 	"sync"
 
 	"github.com/Nexell-AI-Network/nexellia-stratum-bridge/src/gostratum"
-	"github.com/Nexell-AI-Network/nexelliad/app/appmessage"
+	"github.com/Nexell-AI-Network/nexelliad/v2/app/appmessage"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"

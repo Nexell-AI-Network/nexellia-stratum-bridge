@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/Nexell-AI-Network/nexelliad/util"
+	"github.com/Nexell-AI-Network/nexelliad/v2/util"
 	"github.com/mattn/go-colorable"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
@@ -115,7 +115,7 @@ var walletRegex = regexp.MustCompile("^(nexellia|nexelliatest):[a-z0-9]{61,63}$"
 
 
 func CleanWallet(in string) (string, error) {
-	_, err := util.DecodeAddress(in, util.Bech32PrefixKaspa)
+	_, err := util.DecodeAddress(in, util.Bech32PrefixNexellia)
 	if err == nil {
 		return in, nil // good to go
 	}

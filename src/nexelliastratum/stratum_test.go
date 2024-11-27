@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/Nexell-AI-Network/nexelliad/app/appmessage"
-	"github.com/Nexell-AI-Network/nexelliad/util/difficulty"
+	"github.com/Nexell-AI-Network/nexelliad/v2/app/appmessage"
+	"github.com/Nexell-AI-Network/nexelliad/v2/util/difficulty"
 )
 
 func TestHeaderSerialization(t *testing.T) {
